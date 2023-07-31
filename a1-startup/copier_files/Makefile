@@ -13,7 +13,7 @@ all: copier
 clean:
 	rm -rf copier *.o *.dSYM
 
-copier: Coin.o Node.o LinkedList.o .o reader.o writer.o
+copier: main.o reader.o writer.o
 	g++ -Wall -Werror -std=c++14 -g -O -o $@ $^
 
 %.o: %.cpp
