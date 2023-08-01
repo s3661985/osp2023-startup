@@ -17,6 +17,9 @@ class reader {
     /* perform the reading from the file */
     void run();
 
+    // check if file was openend successfully
+    bool isFileOpen();
+
    private:
     std::ifstream in;
     writer& thewriter;

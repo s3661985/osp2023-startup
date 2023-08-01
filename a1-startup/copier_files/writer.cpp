@@ -17,7 +17,15 @@ void writer::run()
 {
     while(!queue.empty())
     {
-        out << queue.front() << std::endl;
+        if(queue.size() > 1)
+        {
+            out << queue.front() << std::endl;
+        }
+        else
+        {   
+            out << queue.front();
+        }
+        
         queue.pop_front();
     }
 

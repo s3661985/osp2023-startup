@@ -10,16 +10,22 @@ int main(int argc, char** argv) {
     /* check command line arguments */
     /* load the file and copy it to the destination */
 
-
     if (argc == 3)
-    {   writer writer(argv[2]);
+    
+    {   
+        writer writer(argv[2]);
         reader reader(argv[1],writer);
 
-        reader.run();
-
-        writer.run();
-
-        
+        if(reader.isFileOpen())
+        {
+            reader.run();
+            writer.run();
+        }
+        else
+        {
+            std::cout << "Failed to open input file" << std::endl;
+        }
+       
     }
     else
     {
